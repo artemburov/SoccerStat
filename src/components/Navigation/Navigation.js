@@ -9,7 +9,7 @@ function Navigation() {
     }
     return (
         <AppBar position="static" >
-            <Container static sx={{ ml: 5 }} >
+            <Container sx={{ ml: 5 }} >
                 <Toolbar>
                     <Typography variant="h6">Футбольная статистика</Typography>
                     <Box sx={{ width: '100%', p: 1}}>
