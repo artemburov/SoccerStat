@@ -7,8 +7,6 @@ export const getLeagues = async () => {
         "x-auth-token": process.env.REACT_APP_API_KEY
       }
     })
-    
-  
     if (response.ok) {
       const json = await response.json()
       return json
@@ -32,3 +30,22 @@ export const getLeagues = async () => {
       return null
     }
   }
+
+  export const getMatchesByLeague = async (leagueId, queryDateFrom, queryDateTo) => {
+    const response = await fetch(
+      `https://api.football-data.org/v2/competitions/${leagueId}/matches?dateFrom=${queryDateFrom}&dateTo=${queryDateTo}`, {
+      headers: {
+        "x-auth-token": process.env.REACT_APP_API_KEY
+      }
+    })
+    if (response.ok) {
+      const json = await response.json()
+      return json
+      
+    } else {
+      console.error("Ошибка!")
+      return null
+    }
+  }
+
+  

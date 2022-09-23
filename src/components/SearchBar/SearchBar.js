@@ -4,7 +4,8 @@ import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 
 const Search = styled('div')(({ theme }) => ({
-    marginTop: 10,
+    marginTop: 15,
+    marginBottom: 20,
     border: "2px solid #4A90E2",
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -15,7 +16,7 @@ const Search = styled('div')(({ theme }) => ({
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-        marginLeft: theme.spacing(6),
+        marginLeft: theme.spacing(11),
         width: '250px',
     },
 }));
@@ -48,7 +49,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-export default function SearchBar() {
+export default function SearchBar({query, updateQuery}) {
     return (
         <Search>
             <SearchIconWrapper>
@@ -57,6 +58,8 @@ export default function SearchBar() {
             <StyledInputBase
                 placeholder="Поиск…"
                 inputProps={{ 'aria-label': 'search' }}
+                value={query}
+                onChange={(e) => updateQuery(e.target.value)}
             />
         </Search>
     );

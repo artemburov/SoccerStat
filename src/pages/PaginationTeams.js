@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { Pagination, Typography } from "@mui/material"
+import { Pagination, Typography } from "@mui/material";
 import Stack from "@mui/material/Stack"
-import Leagues from "../pages/Leagues"
-import SearchBar from '../components/SearchBar/SearchBar'
-import filterData from '../components/filterData'
+import Teams from "../pages/Teams"
+import SearchBar from '../components/SearchBar/SearchBar';
+import filterData from '../components/filterData';
 
 
-function PaginationLeagues({ leagues }) {
+function PaginationTeams({ teams }) {
     const [query, setQuery] = useState("")
     const [page, setPage] = useState(1)
-    const [contentPerPage] = useState(12)
+    const [contentPerPage] = useState(18)
     const handleChange = (event, value) => {
         setPage(value)
     }
@@ -19,7 +19,7 @@ function PaginationLeagues({ leagues }) {
     }
     const lastIndex = page * contentPerPage
     const firstIndex = lastIndex - contentPerPage
-    const dataFiltered = filterData(query, leagues)
+    const dataFiltered = filterData(query, teams)
     const pageCount = Math.ceil(dataFiltered.length / contentPerPage)
     const currentContent = dataFiltered.slice(firstIndex, lastIndex)
 
@@ -33,12 +33,12 @@ function PaginationLeagues({ leagues }) {
                 sx={{ height: "84vh" }}
             >
                 {(!currentContent.length) &&
-                    (<Typography variant="h5">
-                        Лига с таким названием отсутствует
-                    </Typography>)
-                }
+                (<Typography variant="h5">
+                    Команда с таким названием отсутствует
+                </Typography>)
+            }
                 <>
-                    <Leagues leaguesPagination={currentContent} />
+                    <Teams teamsPagination={currentContent} />
                     <Pagination
                         size="large"
                         count={pageCount}
@@ -52,4 +52,4 @@ function PaginationLeagues({ leagues }) {
     )
 }
 
-export default PaginationLeagues
+export default PaginationTeams

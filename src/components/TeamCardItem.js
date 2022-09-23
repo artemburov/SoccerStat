@@ -4,18 +4,18 @@ import {
     CardMedia,
     CardContent,
     Grid,
-    Typography
+    Typography,
+    Container
 } from "@mui/material"
-import { Container } from "@mui/system"
 import { Link } from "react-router-dom"
 import withoutImage from "../images/null.png"
 
 function TeamCardItem({ name, teamFlag }) {
     if (!teamFlag) teamFlag = withoutImage
     return (
-        <Grid item md={2}>
-            <Card sx={{ height: "100%"}}>
-                <CardActionArea component={Link} to="/teams">
+        <Grid item xs={12} md={2} sm={6}>
+            <Card sx={{ maxHeight:210, maxWidth: 300}}>
+                <CardActionArea component={Link} to="/leagues">
                     <CardContent>
                         <Typography
                             sx={{ fontWeight: "bold" }}
@@ -28,8 +28,8 @@ function TeamCardItem({ name, teamFlag }) {
                     <Container
                         component="img"
                         src={teamFlag}
-                        sx={{ height: 150, width: 180, pb: "1rem" }}
                         alt="Team flag"
+                        sx={{height:145, width:190, pb: "1rem"}}
                     />
                 </CardActionArea>
             </Card>

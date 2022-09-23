@@ -12,7 +12,7 @@ function Navigation() {
             <Container sx={{ ml: 5 }} >
                 <Toolbar>
                     <Typography variant="h6">Футбольная статистика</Typography>
-                    <Box sx={{ width: '100%', p: 1}}>
+                    <Box sx={{ width: '100%'}}>
                         <Tabs
                             value={value}
                             onChange={handleChange}

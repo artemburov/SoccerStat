@@ -1,12 +1,12 @@
 import { Grid } from "@mui/material"
 import TeamCardItem from "../components/TeamCardItem"
 
-function Teams({ teams }) {
-  if (!teams.length) return null
+function Teams({ teamsPagination }) {
+  if (!teamsPagination) return null
 
   return (
-    <Grid container spacing={4} justifyContent="center">
-      {teams.map((team) => (
+    <Grid container spacing={4}>
+      {teamsPagination.map((team) => (
         <TeamCardItem
           key={team.id}
           name={team.name}
