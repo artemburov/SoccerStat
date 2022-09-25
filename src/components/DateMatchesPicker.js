@@ -2,10 +2,11 @@ import TextField from "@mui/material/TextField"
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider"
 import { DatePicker } from "@mui/x-date-pickers/DatePicker"
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs"
+import {ru} from 'date-fns/locale'
 
 function DateMatchesPicker({ date, minDate, maxDate, updateDate, label }) {
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
+    <LocalizationProvider locale={ru} dateAdapter={AdapterDayjs}>
       <DatePicker
         label={label}
         inputFormat="DD.MM.YYYY"

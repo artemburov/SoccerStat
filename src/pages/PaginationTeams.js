@@ -3,7 +3,7 @@ import { Pagination, Typography } from "@mui/material";
 import Stack from "@mui/material/Stack"
 import Teams from "../pages/Teams"
 import SearchBar from '../components/SearchBar/SearchBar';
-import filterData from '../components/filterData';
+import filterData from "../usefulFunctions/filterData";
 
 
 function PaginationTeams({ teams }) {

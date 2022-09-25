@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material"
 import { DataGrid } from "@mui/x-data-grid"
-import checkScore from "./checkScore"
-import dictionaryStatus from "./dictionaryStatus"
+import checkScore from "../usefulFunctions/checkScore"
+import dictionaryStatus from "../usefulFunctions/dictionaryStatus"
 
 function DataGridMatches({ matches, updateMatches }) {
   if (!matches.length)

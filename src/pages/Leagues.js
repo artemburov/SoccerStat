@@ -9,6 +9,7 @@ function Leagues({leaguesPagination }) {
       {leaguesPagination.map((league) => (
         <LeagueCardItem 
           key={league.id}
+          leagueId={league.id}
           name={league.name}
           country={league.area.name}
           areaFlag={league.area.ensignUrl}

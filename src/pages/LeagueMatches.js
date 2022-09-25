@@ -2,8 +2,8 @@ import { Breadcrumbs, Typography } from "@mui/material"
 import { Box } from "@mui/system"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import fixDateNumber from "../components/fixDateNumber"
-import getMatchesByLeagueCheck from "../components/getMatchesByLeagueCheck"
+import fixDateNumber from "../usefulFunctions/fixDateNumber"
+import getMatchesByLeagueCheck from "../usefulFunctions/getMatchesByLeagueCheck"
 import DataGridMatches from "../components/DataGridMatches"
 import DateMatchesPicker from "../components/DateMatchesPicker"
 
@@ -57,7 +57,7 @@ function LeagueMatches({ league }) {
   }
 
   return (
-    <Box sx={{ height: "70vh" }}>
+    <Box sx={{ mt:2, ml: 10, mr:10, height: "70vh" }}>
       <Breadcrumbs separator=">" aria-label="bredcrumb">
         <Link to="/SoccerStat">
           <Typography variant="h6">Лиги</Typography>
