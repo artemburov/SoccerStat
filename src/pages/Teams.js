@@ -9,6 +9,7 @@ function Teams({ teamsPagination }) {
       {teamsPagination.map((team) => (
         <TeamCardItem
           key={team.id}
+          teamId={team.id}
           name={team.name}
           teamFlag={team.crestUrl}
         />

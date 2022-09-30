@@ -10,12 +10,13 @@ import {
 import { Link } from "react-router-dom"
 import withoutImage from "../images/null.png"
 
-function TeamCardItem({ name, teamFlag }) {
+function TeamCardItem({ teamId, name, teamFlag }) {
+    const teamLink = `/teams/${teamId}/matches`
     if (!teamFlag) teamFlag = withoutImage
     return (
         <Grid item xs={12} md={2} sm={6}>
             <Card sx={{ maxHeight:210, maxWidth: 300}}>
-                <CardActionArea component={Link} to="/leagues">
+                <CardActionArea component={Link} to={teamLink}>
                     <CardContent>
                         <Typography
                             sx={{ fontWeight: "bold" }}

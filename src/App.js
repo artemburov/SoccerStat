@@ -1,4 +1,4 @@
-import './App.css';
+import './App.css'
 import * as React from "react"
 import Navigation from "./components/Navigation/Navigation"
 import { Route, Routes } from "react-router-dom"
@@ -8,6 +8,7 @@ import PaginationLeagues from "./pages/PaginationLeagues"
 import PaginationTeams from "./pages/PaginationTeams"
 import { Typography } from "@mui/material"
 import LeagueMatches from "./pages/LeagueMatches"
+import TeamMatches from './pages/TeamMatches'
 
 function App() {
   const [leagues, setLeagues] = useState([])
@@ -41,6 +42,14 @@ function App() {
       />
     ))
 
+    const linkTeamMatches = teams.map((team) => (
+      <Route
+        path={`/teams/${team.id}/matches`}
+        element={<TeamMatches team={team} />}
+        key={team.id}
+      />
+    ))
+
     if ((!leagues.length) || (!teams.length)) return (
       <Typography align="center" variant="h5">
           Выполняется загрузка страницы, подождите
@@ -53,6 +62,7 @@ function App() {
           <Route path="/SoccerStat" element={<PaginationLeagues leagues={leagues} />} />
           <Route path="/Teams" element={<PaginationTeams teams={teams} />} />
           {linkLeagueMatches}
+          {linkTeamMatches}
         </Routes>
     </div>
   );

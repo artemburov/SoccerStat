@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material"
-import { DataGrid } from "@mui/x-data-grid"
+import { DataGrid, ruRU } from "@mui/x-data-grid"
 import checkScore from "../usefulFunctions/checkScore"
 import dictionaryStatus from "../usefulFunctions/dictionaryStatus"
 
@@ -72,7 +72,7 @@ function DataGridMatches({ matches, updateMatches }) {
   ]
 
   return (
-    <DataGrid
+    <DataGrid localeText={ruRU.components.MuiDataGrid.defaultProps.localeText} 
       rows={rows}
       columns={columns}
       onChange={updateMatches}
