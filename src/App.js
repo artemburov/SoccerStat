@@ -1,6 +1,6 @@
 import './App.css'
 import * as React from "react"
-import Navigation from "./components/Navigation/Navigation"
+import Navigation from "./components/Navigation"
 import { Route, Routes } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { getLeagues, getTeams} from "./API/fetch"

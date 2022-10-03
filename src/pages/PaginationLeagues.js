@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Pagination, Typography } from "@mui/material"
 import Stack from "@mui/material/Stack"
 import Leagues from "../pages/Leagues"
-import SearchBar from '../components/SearchBar/SearchBar'
+import SearchBar from '../components/SearchBar'
 import filterData from "../usefulFunctions/filterData";
 
 
